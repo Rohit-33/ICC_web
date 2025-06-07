@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IIT Bombay ICC | Music Club</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎶 ICC Music Club</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="#join">Join Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/culturals.iitb" aria-label="Instagram" target="_blank"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="hhttps://www.facebook.com/IITBCult/" aria-label="Facebook" target="_blank"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="https://www.youtube.com/results?search_query=cultural+iitb" aria-label="YouTube" target="_blank"><img src="youtube.png" alt="YouTube" /></a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <video autoplay muted loop class="hero-bg" poster="hero-fallback.jpg">
+      <source src="musicclub-hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to <span>ICC Music Club</span></h1>
+      <p>Experience the rhythm of campus life. Create, perform, and connect at IIT Bombay’s most vibrant club.</p>
+      <a href="#join" class="cta-btn animated">Join the Club</a>
+    </div>
+    <div class="ticker">
+      <span>🎤 Surbahaar | 🎸 Battle of Bands | 🎶 Raagapella | 🎼 Symphony Fest | 🏆 Goonj GC | Open Mic Nights | Workshops | Jam Sessions</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- About with Testimonials -->
+    <section id="about" class="glass-card fade-in">
+      <h2>About Us</h2>
+      <p>
+        The ICC Music Club (Symphony) is IIT Bombay’s home for musicians and music lovers. We organize concerts, workshops, and jam sessions across all genres, nurturing talent and building a vibrant campus music community. Whether you play, sing, or just listen—there’s a place for you!
+      </p>
+      <div class="testimonials-carousel">
+        <div class="testimonial active">
+          <blockquote>
+            “Joining the Music Club was the best part of my IITB journey. The friends and memories are for life!”
+          </blockquote>
+          <span>- Ananya, Batch of 2024</span>
+        </div>
+        <div class="testimonial">
+          <blockquote>
+            “From open mics to Symphony Fest, every event is a celebration of talent and passion.”
+          </blockquote>
+          <span>- Rahul, Club Secretary</span>
+        </div>
+        <div class="testimonial">
+          <blockquote>
+            “Workshops and jam sessions helped me grow as a musician and make lifelong friends.”
+          </blockquote>
+          <span>- Priya, Alumni</span>
+        </div>
+        <button id="testimonial-prev" aria-label="Previous testimonial">&#8249;</button>
+        <button id="testimonial-next" aria-label="Next testimonial">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Events Carousel -->
+    <section id="events" class="glass-card fade-in">
+      <h2>Signature Events</h2>
+      <div class="carousel">
+        <button class="carousel-btn left" aria-label="Previous">&#8249;</button>
+        <div class="carousel-track">
+          <div class="event-card">
+            <h3>🎤 Surbahaar</h3>
+            <p>Annual classical music night, March 17, 2025, Convocation Hall.</p>
+            <button class="rsvp-btn" data-event="Surbahaar">RSVP</button>
+          </div>
+          <div class="event-card">
+            <h3>🎸 Battle of Bands</h3>
+            <p>Campus-wide band competition, Nov 1, 2025, LT PCSA.</p>
+            <button class="rsvp-btn" data-event="Battle of Bands">RSVP</button>
+          </div>
+          <div class="event-card">
+            <h3>🎶 Raagapella</h3>
+            <p>A cappella extravaganza, March 29, 2025, LT PCSA.</p>
+            <button class="rsvp-btn" data-event="Raagapella">RSVP</button>
+          </div>
+          <div class="event-card">
+            <h3>🎼 Symphony Fest</h3>
+            <p>The grand annual music festival of ICC.</p>
+            <button class="rsvp-btn" data-event="Symphony Fest">RSVP</button>
+          </div>
+        </div>
+        <button class="carousel-btn right" aria-label="Next">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal" id="close-rsvp">&times;</span>
+        <h3>RSVP for <span id="rsvp-event-name"></span></h3>
+        <form id="rsvpForm">
+          <input type="text" id="rsvp-name" placeholder="Your Name" required>
+          <input type="email" id="rsvp-email" placeholder="Your Email" required>
+          <button type="submit" class="cta-btn">Submit RSVP</button>
+        </form>
+        <div id="rsvp-message"></div>
+      </div>
+    </div>
+
+    <!-- Event Highlights Grid (with real images and fixed size) -->
+    <section id="highlights" class="glass-card fade-in">
+      <h2>Event Highlights</h2>
+      <div class="event-highlights-grid">
+        <div class="event-card">
+          <img src="surbahar.png" alt="Surbahaar - Classical Night" class="event-img"/>
+          <div class="event-icon">🎵</div>
+          <h3>Surbahaar</h3>
+          <p>Annual classical music night, featuring Indian classical vocal and instrumental performances.</p>
+        </div>
+        <div class="event-card">
+          <img src="symphony.png" alt="Symphony Fest" class="event-img"/>
+          <div class="event-icon">🎼</div>
+          <h3>Symphony Fest</h3>
+          <p>The grand annual music festival of ICC Music Club, open to all genres and collaborations.</p>
+        </div>
+        <div class="event-card">
+          <img src="botb.png" alt="Battle of Bands" class="event-img"/>
+          <div class="event-icon">🎸</div>
+          <h3>Battle of Bands</h3>
+          <p>Campus-wide band competition: blues, funk, rock, metal, and more!</p>
+        </div>
+        <div class="event-card">
+          <img src="om.png" alt="Open Mic Night" class="event-img"/>
+          <div class="event-icon">🎤</div>
+          <h3>Open Mic Night</h3>
+          <p>Monthly open stage for all students to perform, jam, and try out new music.</p>
+        </div>
+        <div class="event-card">
+          <img src="ws.png" alt="Workshop" class="event-img"/>
+          <div class="event-icon">🎧</div>
+          <h3>Workshops</h3>
+          <p>Music production, vocals, and instrument mastery sessions with alumni and guest artists.</p>
+        </div>
+        <div class="event-card">
+          <img src="migo.png" alt="Mood Indigo Proshows" class="event-img"/>
+          <div class="event-icon">🌟</div>
+          <h3>Mood Indigo Proshows</h3>
+          <p>Asia’s largest college cultural festival with star performances and competitions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section id="calendar" class="glass-card fade-in">
+      <h2>Meeting Calendar</h2>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prev-month">&#8249;</button>
+          <span id="month-year"></span>
+          <button id="next-month">&#8250;</button>
+        </div>
+        <div class="calendar-weekdays" id="calendar-weekdays"></div>
+        <div class="calendar-days" id="calendar-days"></div>
+        <div id="calendar-message"></div>
+      </div>
+    </section>
+
+    <!-- Join Us Form -->
+    <section id="join" class="glass-card fade-in">
+  <h2>Join Us</h2>
+  <div class="join-newsletter-center">
+    <form id="joinForm" autocomplete="off">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+      <button type="submit" class="cta-btn">Confirm</button>
+      <div id="formMessage"></div>
+    </form>
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <form id="newsletterForm">
+        <input type="email" id="newsletter-email" placeholder="Your Email" required>
+        <button type="submit" class="cta-btn">Subscribe</button>
+      </form>
+      <div id="newsletter-message"></div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact + Floating Action Button -->
+    <section id="contact" class="glass-card fade-in">
+      <h2>Contact the Secretary</h2>
+      <div class="contact-info">
+        <strong>Name:</strong> Pranav Sambhare<br>
+        <strong>Email:</strong> pranav.sambhare@iitb.ac.in<br>
+        <strong>Phone:</strong> +91-9876543210
+      </div>
+      <a href="https://wa.me/919876543210" class="fab" aria-label="Chat on WhatsApp" target="_blank">💬</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 IIT Bombay ICC | Music Club</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/iitb_musicclub" aria-label="Instagram" target="_blank"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/iitb.musicclub" aria-label="Facebook" target="_blank"><img src="facebook.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@iitb_musicclub" aria-label="YouTube" target="_blank"><img src="youtube.png" alt="YouTube" /></a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
