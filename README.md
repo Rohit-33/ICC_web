@@ -106,9 +106,9 @@ project-root/
 
 ## Contact
 
-**Club Secretary:** Pranav Sambhare  
-**Email:** pranav.sambhare@iitb.ac.in  
-**Phone:** +91-9876543210
+**Club Secretary:** Rohit Parida  
+**Email:** rohitparida@cse.iitb.ac.in  
+**Phone:** +91-9861644087
 
 ---
 
